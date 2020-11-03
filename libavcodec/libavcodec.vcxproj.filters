@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{6cccffb0-493f-4c4e-a208-4708d4113b55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{41fe66ec-ed5f-4caf-a03b-1828f4051ce8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avcodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bswapdsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bytestream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cabac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cabac_functions.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cabac_tablegen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="get_bits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="golomb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hevc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hevcdsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hevcpred.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mathops.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="old_codec_ids.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="put_bits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rnd_avg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="videodsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hevc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_cabac.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_filter.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_mvs.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_ps.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_refs.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevc_sei.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevcdsp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="hevcpred.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="videodsp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="cabac.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="golomb.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

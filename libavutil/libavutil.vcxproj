@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{3F0DCE4C-BA3A-4D68-B07B-9D840BC175CC}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)third-$(Platform)\include</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)third-$(Platform)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="adler32.h" />
+    <ClInclude Include="aes.h" />
+    <ClInclude Include="atomic.h" />
+    <ClInclude Include="atomic_gcc.h" />
+    <ClInclude Include="atomic_suncc.h" />
+    <ClInclude Include="atomic_win32.h" />
+    <ClInclude Include="attributes.h" />
+    <ClInclude Include="audioconvert.h" />
+    <ClInclude Include="audio_fifo.h" />
+    <ClInclude Include="avassert.h" />
+    <ClInclude Include="avconfig.h" />
+    <ClInclude Include="avstring.h" />
+    <ClInclude Include="avutil.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="blowfish.h" />
+    <ClInclude Include="bprint.h" />
+    <ClInclude Include="bswap.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="buffer_internal.h" />
+    <ClInclude Include="cast5.h" />
+    <ClInclude Include="channel_layout.h" />
+    <ClInclude Include="colorspace.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="cpu.h" />
+    <ClInclude Include="cpu_internal.h" />
+    <ClInclude Include="crc.h" />
+    <ClInclude Include="des.h" />
+    <ClInclude Include="dict.h" />
+    <ClInclude Include="display.h" />
+    <ClInclude Include="downmix_info.h" />
+    <ClInclude Include="dynarray.h" />
+    <ClInclude Include="error.h" />
+    <ClInclude Include="eval.h" />
+    <ClInclude Include="ffversion.h" />
+    <ClInclude Include="fifo.h" />
+    <ClInclude Include="file.h" />
+    <ClInclude Include="fixed_dsp.h" />
+    <ClInclude Include="float_dsp.h" />
+    <ClInclude Include="frame.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="hmac.h" />
+    <ClInclude Include="imgutils.h" />
+    <ClInclude Include="integer.h" />
+    <ClInclude Include="internal.h" />
+    <ClInclude Include="intfloat.h" />
+    <ClInclude Include="intmath.h" />
+    <ClInclude Include="intreadwrite.h" />
+    <ClInclude Include="lfg.h" />
+    <ClInclude Include="libm.h" />
+    <ClInclude Include="lls.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="lzo.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="mathematics.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="mem.h" />
+    <ClInclude Include="motion_vector.h" />
+    <ClInclude Include="murmur3.h" />
+    <ClInclude Include="old_pix_fmts.h" />
+    <ClInclude Include="opencl.h" />
+    <ClInclude Include="opencl_internal.h" />
+    <ClInclude Include="opt.h" />
+    <ClInclude Include="parseutils.h" />
+    <ClInclude Include="pca.h" />
+    <ClInclude Include="pixdesc.h" />
+    <ClInclude Include="pixelutils.h" />
+    <ClInclude Include="pixfmt.h" />
+    <ClInclude Include="qsort.h" />
+    <ClInclude Include="random_seed.h" />
+    <ClInclude Include="rational.h" />
+    <ClInclude Include="rc4.h" />
+    <ClInclude Include="replaygain.h" />
+    <ClInclude Include="ripemd.h" />
+    <ClInclude Include="samplefmt.h" />
+    <ClInclude Include="sha.h" />
+    <ClInclude Include="sha512.h" />
+    <ClInclude Include="softfloat.h" />
+    <ClInclude Include="stereo3d.h" />
+    <ClInclude Include="threadmessage.h" />
+    <ClInclude Include="time.h" />
+    <ClInclude Include="timecode.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="timestamp.h" />
+    <ClInclude Include="time_internal.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="x86_cpu.h" />
+    <ClInclude Include="xga_font_data.h" />
+    <ClInclude Include="xtea.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="buffer.c" />
+    <ClCompile Include="frame.c" />
+    <ClCompile Include="log2_tab.c" />
+    <ClCompile Include="md5.c" />
+    <ClCompile Include="mem.c" />
+    <ClCompile Include="pixdesc.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

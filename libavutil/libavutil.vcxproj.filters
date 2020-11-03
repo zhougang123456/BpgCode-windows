@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{ad6de960-70b3-4496-b393-b0af63537693}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{376ce81d-5b1d-481e-a5b3-dbe76813e437}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="adler32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="aes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atomic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atomic_gcc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atomic_suncc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atomic_win32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_fifo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="audioconvert.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avassert.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avutil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="blowfish.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bprint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bswap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="buffer_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cast5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="channel_layout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="colorspace.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="crc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="des.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dict.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="display.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="downmix_info.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dynarray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="eval.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ffversion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fifo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fixed_dsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="float_dsp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="frame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="hmac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="imgutils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="integer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="intfloat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="intmath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="intreadwrite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lfg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lls.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lzo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mathematics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="mem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="motion_vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="murmur3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="old_pix_fmts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opencl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opencl_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="parseutils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pca.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pixdesc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pixelutils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pixfmt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="qsort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="random_seed.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rational.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rc4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="replaygain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ripemd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="samplefmt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sha.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sha512.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="softfloat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stereo3d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="threadmessage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="time_internal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="timecode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="timestamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="x86_cpu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xga_font_data.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xtea.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="buffer.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="frame.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="log2_tab.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mem.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pixdesc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

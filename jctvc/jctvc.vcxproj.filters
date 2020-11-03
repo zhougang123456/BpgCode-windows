@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4cc1139a-58b4-48f0-bcfc-ba622b10cade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{8c2e5124-4913-4565-9952-9d4b78f60204}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="program_options_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TAppEncCfg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TAppEncTop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibVideoIO\TVideoIOYuv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\AnnexBwrite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\NALwrite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\SEIwrite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\SyntaxElementWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncAnalyze.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncBinCoder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncBinCoderCABAC.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncBinCoderCABACCounter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncCavlc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncCfg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncCu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncEntropy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncGOP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncPic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncPreanalyzer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncRateCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncSampleAdaptiveOffset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncSbac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncSlice.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\TEncTop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibEncoder\WeightPredAnalysis.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\AccessUnit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\CommonDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\ContextModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\ContextModel3DBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\ContextTables.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\Debug.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\NAL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\SEI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComBitCounter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComBitStream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComCABACTables.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComChromaFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComCodingStatistics.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComDataCU.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComInterpolationFilter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComLoopFilter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComMotionInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComMv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComPattern.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComPic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComPicSym.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComPicYuv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComPrediction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComRdCost.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComRdCostWeightPrediction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComRectangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComRom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComSampleAdaptiveOffset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComSlice.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComTrQuant.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComTU.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComWeightPrediction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TComYuv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TLibCommon\TypeDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libmd5\libmd5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libmd5\MD5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TLibEncoder\SyntaxElementWriter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncAnalyze.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncBinCoderCABAC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncBinCoderCABACCounter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncCavlc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncCu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncEntropy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncGOP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncPic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncPreanalyzer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncRateCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncSampleAdaptiveOffset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncSbac.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncSearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncSlice.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\TEncTop.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\WeightPredAnalysis.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibVideoIO\TVideoIOYuv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\ContextModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\ContextModel3DBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\Debug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\SEI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComBitStream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComCABACTables.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComChromaFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComDataCU.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComInterpolationFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComLoopFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComMotionInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPattern.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPicSym.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPicYuv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPicYuvMD5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComPrediction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComRdCost.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComRdCostWeightPrediction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComRom.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComSampleAdaptiveOffset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComSlice.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComTrQuant.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComTU.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComWeightPrediction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibCommon\TComYuv.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="libmd5\libmd5.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="program_options_lite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TAppEncCfg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TAppEncTop.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="jctvc_glue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\NALwrite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TLibEncoder\SEIwrite.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
