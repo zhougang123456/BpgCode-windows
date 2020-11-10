@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -2169,7 +2170,7 @@ static int build_modified_hevc(uint8_t **pout_buf,
     free(out_buf->buf);
     return -1;
 }
-#define USE_JCTVC
+#define USE_X265
 typedef enum {
 #if defined(USE_X265)
     HEVC_ENCODER_X265,
@@ -2881,7 +2882,7 @@ int main(int argc, char **argv)
         perror(outfilename);
         exit(1);
     }
-
+    printf("encoder start!");
     enc_ctx = bpg_encoder_open(p);
     if (!enc_ctx) {
         fprintf(stderr, "Could not open BPG encoder\n");
@@ -2971,7 +2972,7 @@ int main(int argc, char **argv)
     fclose(f);
     
     bpg_encoder_close(enc_ctx);
-    
+    printf("encoder stop!");
     bpg_encoder_param_free(p);
 
     return 0;
