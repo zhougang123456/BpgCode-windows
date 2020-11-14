@@ -2213,9 +2213,6 @@ static HEVCEncoder *hevc_encoder_tab[HEVC_ENCODER_COUNT] = {
 #endif
 #define DEFAULT_COMPRESS_LEVEL 8
 
-
-typedef struct BPGEncoderContext BPGEncoderContext;
-
 typedef struct BPGEncoderParameters {
     int qp; /* 0 ... 51 */
     int alpha_qp; /* -1 ... 51. -1 means same as qp */
@@ -2235,18 +2232,6 @@ typedef struct BPGEncoderParameters {
 } BPGEncoderParameters;
 
 typedef int BPGEncoderWriteFunc(void *opaque, const uint8_t *buf, int buf_len);
-
-struct BPGEncoderContext {
-    BPGEncoderParameters params;
-    BPGMetaData *first_md;
-    HEVCEncoder *encoder;
-    int frame_count;
-    HEVCEncoderContext *enc_ctx;
-    HEVCEncoderContext *alpha_enc_ctx;
-    int frame_ticks;
-    uint16_t *frame_duration_tab;
-    int frame_duration_tab_size;
-};
 
 void *mallocz(size_t size)
 {
@@ -2279,14 +2264,20 @@ void bpg_encoder_param_free(BPGEncoderParameters *p)
     free(p);
 }
 
-BPGEncoderContext *bpg_encoder_open(BPGEncoderParameters *p)
+BPGEncoderContext *bpg_encoder_open(int qp, int compress_level)
 {
     BPGEncoderContext *s;
 
     s = mallocz(sizeof(BPGEncoderContext));
     if (!s)
         return NULL;
-    s->params = *p;
+    s->params.qp = qp;
+    s->params.alpha_qp = -1;
+    s->params.preferred_chroma_format = BPG_FORMAT_420;
+    s->params.compress_level = compress_level;
+    s->params.frame_delay_num = 1;
+    s->params.frame_delay_den = 25;
+    s->params.loop_count = 0;
     s->encoder = hevc_encoder_tab[s->params.encoder_type];
     s->frame_ticks = 1;
     return s;
@@ -2710,10 +2701,56 @@ struct option long_opts[] = {
     { NULL },
 };
 
+BPGEncoderContext* bpg_encoder_open(int qp, int compress_level)
+{
+    BPGEncoderContext* s;
+
+    s = mallocz(sizeof(BPGEncoderContext));
+    if (!s)
+        return NULL;
+    s->params.qp = qp;
+    s->params.alpha_qp = -1;
+    s->params.preferred_chroma_format = BPG_FORMAT_420;
+    s->params.compress_level = compress_level;
+    s->params.frame_delay_num = 1;
+    s->params.frame_delay_den = 25;
+    s->params.loop_count = 0;
+    s->encoder = hevc_encoder_tab[s->params.encoder_type];
+    s->frame_ticks = 1;
+    return s;
+}
+
+void bpg_encoder_start(BPGEncoderContext* enc_ctx, uint8_t* buf, int width, int height, int bit_depth, int has_alpha)
+{
+
+    enc_ctx->img = image_alloc(width, height,
+        BPG_FORMAT_444, 0, BPG_CS_YCbCr,
+        bit_depth);
+    enc_ctx->img->limited_range = 0;
+    enc_ctx->img->premultiplied_alpha = 0;
+
+    int y;
+    ColorConvertState cvt_s, * cvt = &cvt_s;
+
+    convert_init(cvt, bit_depth, bit_depth, BPG_CS_YCbCr, 0);
+
+    RGBConvertFunc* convert_func;
+
+    convert_func = rgb_to_cs[0][BPG_CS_YCbCr];
+
+    for (y = 0; y < enc_ctx->img->h; y++) {
+        convert_func(cvt, (PIXEL*)(enc_ctx->img->data[0] + y * enc_ctx->img->linesize[0]),
+            (PIXEL*)(enc_ctx->img->data[1] + y * enc_ctx->img->linesize[1]),
+            (PIXEL*)(enc_ctx->img->data[2] + y * enc_ctx->img->linesize[2]),
+            buf + y * enc_ctx->img->w * (3 + has_alpha), enc_ctx->img->w, 3 + has_alpha);
+    }
+
+}
+
+#include "windows.h"
 int main(int argc, char **argv)
 {
     const char *infilename, *outfilename, *frame_delay_file;
-    Image *img;
     FILE *f;
     int c, option_index;
     int keep_metadata;
@@ -2742,91 +2779,54 @@ int main(int argc, char **argv)
         exit(1);
     }
     printf("encoder start!");
-    enc_ctx = bpg_encoder_open(p);
+    enc_ctx = bpg_encoder_open(35, 8);
     if (!enc_ctx) {
         fprintf(stderr, "Could not open BPG encoder\n");
         exit(1);
     }
 
-    if (p->animated) {
-        int frame_num, first_frame, frame_ticks;
-        char filename[1024];
-        FILE *f1;
-
-        if (frame_delay_file) {
-            f1 = fopen(frame_delay_file, "r");
-            if (!f1) {
-                fprintf(stderr, "Could not open '%s'\n", frame_delay_file);
-                exit(1);
-            }
-        } else {
-            f1 = NULL;
-        }
-
-        first_frame = 1;
-        for(frame_num = 0; ; frame_num++) {
-            if (get_filename_num(filename, sizeof(filename), infilename, frame_num) < 0) {
-                fprintf(stderr, "Invalid filename syntax: '%s'\n", infilename);
-                exit(1);
-            }
-            img = load_image(&md, filename, color_space, bit_depth, limited_range,
-                             premultiplied_alpha);
-            if (!img) {
-                if (frame_num == 0)
-                    continue; /* accept to start at 0 or 1 */
-                if (first_frame) {
-                    fprintf(stderr, "Could not read '%s'\n", filename);
-                    exit(1);
-                } else {
-                    break;
-                }
-            }
-            frame_ticks = 1;
-            if (f1) {
-                float fdelay;
-                if (fscanf(f1, "%f", &fdelay) == 1) {
-                    frame_ticks = lrint(fdelay * p->frame_delay_den / (p->frame_delay_num * 100));
-                    if (frame_ticks < 1)
-                        frame_ticks = 1;
-                }
-            }
-            
-            if (p->verbose)
-                printf("Encoding '%s' ticks=%d\n", filename, frame_ticks);
-            
-            if (keep_metadata && first_frame) {
-                bpg_encoder_set_extension_data(enc_ctx, md);
-            } else {
-                bpg_md_free(md);
-            }
-            bpg_encoder_set_frame_duration(enc_ctx, frame_ticks);
-            bpg_encoder_encode(enc_ctx, img, my_write_func, f);
-            image_free(img);
-
-            first_frame = 0;
-        }
-        if (f1)
-            fclose(f1);
-        /* end of stream */
-        bpg_encoder_encode(enc_ctx, NULL, my_write_func, f);
-    } else {
-        img = load_image(&md, infilename, color_space, bit_depth, limited_range,
-                         premultiplied_alpha);
-        if (!img) {
-            fprintf(stderr, "Could not read '%s'\n", infilename);
-            exit(1);
-        }
-        
-        if (!keep_metadata && md) {
-            bpg_md_free(md);
-            md = NULL;
-        }
-        
-        bpg_encoder_set_extension_data(enc_ctx, md);
-        
-        bpg_encoder_encode(enc_ctx, img, my_write_func, f);
-        image_free(img);
+    if (!enc_ctx) {
+        fprintf(stderr, "Could not open BPG encoder\n");
+        exit(1);
     }
+
+    int has_alpha = 1;
+    FILE* fp;
+    if ((fp = fopen(infilename, "rb")) == NULL)  //以二进制的方式打开文件
+    {
+
+        return FALSE;
+    }
+    if (fseek(fp, sizeof(BITMAPFILEHEADER), 0))  //跳过BITMAPFILEHEADE
+    {
+        return FALSE;
+    }
+    BITMAPINFOHEADER infoHead;
+    fread(&infoHead, sizeof(BITMAPINFOHEADER), 1, fp);   //从fp中读取BITMAPINFOHEADER信息到infoHead中,同时fp的指针移动
+    int bmpwidth = infoHead.biWidth;
+
+    int bmpheight = infoHead.biHeight;
+
+    if (bmpheight < 0) {
+        bmpheight *= -1;
+    }
+    int linebyte = bmpwidth * 4; //计算每行的字节数，24：该图片是24位的bmp图，3：确保不丢失像素
+
+    unsigned char* pBmpBuf = (unsigned char*)malloc(linebyte * bmpheight);
+
+    fread(pBmpBuf, sizeof(char), linebyte * bmpheight, fp);
+
+    bpg_encoder_start(enc_ctx, pBmpBuf, bmpwidth, bmpheight, 8, 1);
+
+    if (!enc_ctx->img) {
+        fprintf(stderr, "Could not read '%s'\n", infilename);
+        exit(1);
+    }
+    printf("encoder start!");
+        
+    bpg_encoder_encode(enc_ctx, enc_ctx->img, my_write_func, f);
+        image_free(enc_ctx->img);
+    
 
     fclose(f);
     
