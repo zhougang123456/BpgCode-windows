@@ -879,9 +879,9 @@ static void ycc_to_rgb24(ColorConvertState *s, uint8_t *dst, const PIXEL *y_ptr,
         y_val = y_ptr[x] * c_one;
         cb_val = cb_ptr[x] - center;
         cr_val = cr_ptr[x] - center;
-        q[0] = clamp8((y_val + c_r_cr * cr_val + rnd) >> shift);
+        q[2] = clamp8((y_val + c_r_cr * cr_val + rnd) >> shift);
         q[1] = clamp8((y_val - c_g_cb * cb_val - c_g_cr * cr_val + rnd) >> shift);
-        q[2] = clamp8((y_val + c_b_cb * cb_val + rnd) >> shift);
+        q[0] = clamp8((y_val + c_b_cb * cb_val + rnd) >> shift);
         q += incr;
     }
 }

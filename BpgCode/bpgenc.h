@@ -57,7 +57,15 @@ typedef struct {
     int verbose;
 } HEVCEncodeParams;
 
-typedef struct HEVCEncoderContext HEVCEncoderContext; 
+typedef struct HEVCEncoderContext HEVCEncoderContext;
+
+typedef struct BPGEncoderOutput {
+    uint8_t* out_buf;
+    int      buf_free_size;
+    void    (*init_output_buffer) (void* ctx);
+    void    (*more_output_buffer) (void* ctx);
+    void    (*term_output_buffer) (void* ctx);
+}BPGEncoderOutput;
 
 typedef struct {
     HEVCEncoderContext *(*open)(const HEVCEncodeParams *params);
@@ -65,13 +73,69 @@ typedef struct {
     int (*close)(HEVCEncoderContext *s, uint8_t **pbuf);
 } HEVCEncoder;
 
+#define USE_X265
+typedef enum {
+#if defined(USE_X265)
+    HEVC_ENCODER_X265,
+#endif
+#if defined(USE_JCTVC)
+    HEVC_ENCODER_JCTVC,
+#endif
+
+    HEVC_ENCODER_COUNT,
+} HEVCEncoderEnum;
+
+typedef struct BPGEncoderParameters {
+    int qp; /* 0 ... 51 */
+    int alpha_qp; /* -1 ... 51. -1 means same as qp */
+    int lossless; /* true if lossless compression (qp and alpha_qp are
+                     ignored) */
+    BPGImageFormatEnum preferred_chroma_format;
+    int sei_decoded_picture_hash; /* 0, 1 */
+    int compress_level; /* 1 ... 9 */
+    int verbose;
+    HEVCEncoderEnum encoder_type;
+    int animated; /* 0 ... 1: if true, encode as animated image */
+    uint16_t loop_count; /* animations: number of loops. 0=infinite */
+    /* animations: the frame delay is a multiple of
+       frame_delay_num/frame_delay_den seconds */
+    uint16_t frame_delay_num;
+    uint16_t frame_delay_den;
+} BPGEncoderParameters;
+
+typedef struct BPGMetaData {
+    uint32_t tag;
+    uint8_t* buf;
+    int buf_len;
+    struct BPGMetaData* next;
+} BPGMetaData;
+
+typedef struct BPGEncoderContext {
+    void* client_data;
+    BPGEncoderOutput* output;
+    BPGEncoderParameters params;
+    BPGMetaData* first_md;
+    HEVCEncoder* encoder;
+    int frame_count;
+    HEVCEncoderContext* enc_ctx;
+    HEVCEncoderContext* alpha_enc_ctx;
+    int frame_ticks;
+    uint16_t* frame_duration_tab;
+    int frame_duration_tab_size;
+    Image* img;
+}BPGEncoderContext;
+
 extern HEVCEncoder jctvc_encoder;
 extern HEVCEncoder x265_hevc_encoder;
 
-int x265_encode_picture(uint8_t **pbuf, Image *img, 
-                        const HEVCEncodeParams *params);
 void save_yuv1(Image *img, FILE *f);
 void save_yuv(Image *img, const char *filename);
+
+BPGEncoderContext* bpg_encoder_open(int qp, int compress_level);
+int bpg_encoder_encode(BPGEncoderContext* s);
+void bpg_encoder_start(BPGEncoderContext* enc_ctx, uint8_t* buf, int width, int height, int bit_depth, int has_alpha);
+void bpg_encoder_close(BPGEncoderContext* s);
+
 
 #ifdef __cplusplus
 }

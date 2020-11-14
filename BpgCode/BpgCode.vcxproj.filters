@@ -21,18 +21,15 @@
     <ClCompile Include="libbpg.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="get_long.c">
+    <ClCompile Include="bpgdec.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bpgenc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="libbpg.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="getopt.h">
+    <ClInclude Include="bpgenc.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
