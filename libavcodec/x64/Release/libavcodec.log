@@ -1,0 +1,16 @@
+﻿  cabac.c
+  golomb.c
+  hevc.c
+  hevcdsp.c
+  hevcpred.c
+  hevc_cabac.c
+  hevc_filter.c
+  hevc_mvs.c
+  hevc_ps.c
+  hevc_refs.c
+  hevc_sei.c
+  utils.c
+  videodsp.c
+  正在生成代码...
+D:\github\BpgCode-windows\libavcodec\hevc_cabac.c(1526): warning C4700:  使用了未初始化的局部变量“explicit_rdpcm_dir_flag”
+  libavcodec.vcxproj -> D:\github\BpgCode-windows\x64\Release\libavcodec.lib

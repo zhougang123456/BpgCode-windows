@@ -1,0 +1,8 @@
+﻿  buffer.c
+  frame.c
+  log2_tab.c
+  md5.c
+  mem.c
+  pixdesc.c
+  正在生成代码...
+  libavutil.vcxproj -> D:\github\BpgCode-windows\x64\Release\libavutil.lib

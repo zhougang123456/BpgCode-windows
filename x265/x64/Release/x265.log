@@ -1,0 +1,6 @@
+﻿  x265_glue.c
+D:\github\BpgCode-windows\x265\x265_glue.c(218,12): warning C4477:  “printf”: 格式字符串“%u”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“uint64_t”
+D:\github\BpgCode-windows\x265\x265_glue.c(218,12): message :  请考虑在格式字符串中使用“%llu”
+D:\github\BpgCode-windows\x265\x265_glue.c(218,12): message :  请考虑在格式字符串中使用“%Iu”
+D:\github\BpgCode-windows\x265\x265_glue.c(218,12): message :  请考虑在格式字符串中使用“%I64u”
+  x265.vcxproj -> D:\github\BpgCode-windows\x64\Release\x265.lib
