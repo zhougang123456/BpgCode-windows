@@ -58,13 +58,13 @@ typedef struct {
 } HEVCEncodeParams;
 
 typedef struct HEVCEncoderContext HEVCEncoderContext;
-
+typedef struct BPGEncoderContext BPGEncoderContext;
 typedef struct BPGEncoderOutput {
-    uint8_t* out_buf;
     int      buf_free_size;
-    void    (*init_output_buffer) (void* ctx);
-    void    (*more_output_buffer) (void* ctx);
-    void    (*term_output_buffer) (void* ctx);
+    uint8_t* out_buf;
+    void    (*init_output_buffer) (BPGEncoderContext* ctx);
+    void    (*more_output_buffer) (BPGEncoderContext* ctx);
+    void    (*term_output_buffer) (BPGEncoderContext* ctx);
 }BPGEncoderOutput;
 
 typedef struct {

@@ -29,8 +29,7 @@
 #include "bpgenc.h"
 
 #include "x265.h"
-#include "time.h"
-#include "winsock.h"
+
 
 struct HEVCEncoderContext {
     const x265_api *api;
@@ -146,24 +145,7 @@ static void add_nal(HEVCEncoderContext *s, const uint8_t *data, int data_len)
     memcpy(s->buf + s->buf_len, data, data_len);
     s->buf_len += data_len;
 }
-static inline uint64_t get_time()
-{
-    time_t clock;
-    struct tm tm;
-    SYSTEMTIME wtm;
-    GetLocalTime(&wtm);
-    tm.tm_year = wtm.wYear - 1900;
-    tm.tm_mon = wtm.wMonth - 1;
-    tm.tm_mday = wtm.wDay;
-    tm.tm_hour = wtm.wHour;
-    tm.tm_min = wtm.wMinute;
-    tm.tm_sec = wtm.wSecond;
-    tm.tm_isdst = -1;
-    clock = mktime(&tm);
-    uint64_t sec = clock;
-    uint64_t sec_usec = wtm.wMilliseconds * 1000;
-    return (uint64_t)sec * 1000000 + (uint64_t)sec_usec;
-}
+
 static int x265_encode(HEVCEncoderContext *s, Image *img)
 {
     int c_count, i, ret;
@@ -196,7 +178,6 @@ static int x265_close(HEVCEncoderContext *s, uint8_t **pbuf)
     int buf_len, ret, i;
     uint32_t nal_count;
     x265_nal *p_nal;
-    uint64_t start = get_time();
     /* get last compressed pictures */
     for(;;) {
         ret = s->api->encoder_encode(s->enc, &p_nal, &nal_count, NULL, NULL);
@@ -215,8 +196,7 @@ static int x265_close(HEVCEncoderContext *s, uint8_t **pbuf)
     buf_len = s->buf_len;
 
     s->api->encoder_close(s->enc);
-    uint64_t time = get_time() - start;
-    printf("encode time once is %u ms\n", time / 1000);
+   
     s->api->picture_free(s->pic);
     free(s);
     return buf_len;
