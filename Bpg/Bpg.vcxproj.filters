@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="libbpg.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bpgenc.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bpgenc.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="libbpg.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{0bee8481-a180-4115-9d6e-cd5f0c22fcbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{479a9373-b121-4bce-b512-871d453dd49e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
