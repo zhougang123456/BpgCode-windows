@@ -86,7 +86,7 @@ static inline uint64_t get_time()
     return (uint64_t)sec * 1000000 + (uint64_t)sec_usec;
 }
 
-int main(int argc, char **argv)
+int main_test(int argc, char **argv)
 {
     FILE *f;
     BPGDecoderContext *img;

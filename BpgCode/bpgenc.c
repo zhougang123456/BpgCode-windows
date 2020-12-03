@@ -66,7 +66,7 @@ static inline uint64_t get_time()
     uint64_t sec_usec = wtm.wMilliseconds * 1000;
     return (uint64_t)sec * 1000000 + (uint64_t)sec_usec;
 }
-int main_test(int argc, char** argv)
+int main(int argc, char** argv)
 {
     const char* infilename, * outfilename, * frame_delay_file;
     FILE* f;
@@ -85,7 +85,7 @@ int main_test(int argc, char** argv)
     premultiplied_alpha = 0;
     frame_delay_file = NULL;
 
-    infilename = "out.bmp";
+    infilename = "2.bmp";
 
     f = fopen(outfilename, "wb");
     if (!f) {
